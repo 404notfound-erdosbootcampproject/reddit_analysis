@@ -48,14 +48,13 @@ It is of course nontrivial to decide precisely what one means by "popular." For 
 
 We therefore single out the post's score, upvote ratio, and total number of comments as relevent to measuring the post's popularity. From this three variables, we would like to distill a single numerical "popularity score" for a post. In order to do this, we perform a Principal Component Analysis on these three variables across our dataset. Our "popularity score" is then defined to be the principal score, that is to say, the first principal component from our analysis. The first principal component explains 45% of the variance in our normalized outputs.
 
-
 ## Features that Influence Popularity
 
 Our goal is to "catch on early" to the fact that a post is becoming popular. On the outset of our project, we decided to collect the following features.
 
 The most direct thing one might expect to do is to see whether the post has quickly generated a lot of discussion. We therefore gather data on how many (top-level) comments there are on a post within an initial time period. There is of course a tradeoff here: the shorter the time period, the less nascent discussion we get to observe, but the longer the time period, the longer we have to wait to act on our results!
 
-The coarsest observation one can make about a post is simply how long it is. It is quite sensible to expect <i>a priori</i> that this should affect the resulting popularity of the post. Short posts might become more popular: after all, there is a reason "too long; didn't read" (TL;DR) has become a common acronym! On the other hand, long posts might also become more popular: after all, there's more content to discuss! In any case
+The coarsest observation one can make about a post is simply how long it is. It is quite sensible to expect <i>a priori</i> that this should affect the resulting popularity of the post. Short posts might become more popular: after all, there is a reason "too long; didn't read" (TL;DR) has become a common acronym! On the other hand, long posts might also become more popular: after all, there's more content to discuss! Perhaps there is some truth to both of these considerations: we did not find title length or body length to be useful variables.
 
 Finally, we felt it would be reasonable to assess the overall sentiment of the words being posted. We therefore used VADER Sentiment Analysis to produce analytics on various sentiment variables in the titles and bodies of posts. Unfortunately, we found very little use for these variables.
 
