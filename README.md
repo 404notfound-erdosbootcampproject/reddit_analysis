@@ -51,6 +51,16 @@ We therefore single out the posts score, upvote ratio, and total number of comme
 
 ## Features that Influence Popularity
 
+Our goal is to "catch on early" to the fact that a post is becoming popular. On the outset of our project, we decided to collect the following features.
+
+Number of early comments:
+The most direct thing one might expect to do is to see whether the post has quickly generated a lot of discussion. We therefore gather data on how many (top-level) comments there are on a post within an initial time period. There is of course a tradeoff here: the shorter the time period, the less nascent discussion we get to observe, but the longer the time period, the longer we have to wait to act on our results! In balancing this tradeoff, we decided that our initial time period should be ((one hour.))
+
+Title and body length:
+The coarsest observation one can make about a post is simply how long it is. It is quite sensible to expect a priori that this should affect the resulting popularity of the post. Short posts might become more popular: after all, there is a reason "too long; didn't read" (TL;DR) has become a common acronym! On the other hand, long posts might also become more popular: after all, there's more content to discuss! In any case
+
+
+Sentiment analysis (ended up not used!):
 
 ## Model
 After classifying posts as "popular" (class=1) and "not popular" (class = 0), we found that ((30%)) of the posts were popular. Therefore we aimed to have a model that correctly classified posts significantly more than ((70%)) of the time. 
