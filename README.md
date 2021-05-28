@@ -27,7 +27,7 @@ We completed our initial analysis on a dataset of posts from several months on r
 We observed that the popularity of the subreddit as a whole waxes and wanes over time, and so in our final analysis, we focus in on posts from a single day.) 
 
 Anatomy of a Reddit post:
-A post on Reddit has several key features. It has a title and a body, the latter of which may include non-text content. Users may assign upvotes and downvotes to a post, indicating their preference for the post. The different between the number of upvotes and downvotes is the post's score. Users may add comments in two ways: they may comment directly on the post ("top-level" comments), or they may add a comment in response to another comment.
+A post on Reddit has several key features. It has a title and a body, the latter of which may include non-text content. Users may assign upvotes and downvotes to a post, indicating their preference for the post. The difference between the number of upvotes and downvotes is the post's score. Users may add comments in two ways: they may comment directly on the post ("top-level" comments), or they may add a comment in response to another comment.
 
 Given a particular post on r/wallstreetbets, we considered the following features:
 - The length of the title
@@ -38,7 +38,7 @@ Given a particular post on r/wallstreetbets, we considered the following feature
 - The number of top-level comments in the first hour
 - The total number of all comments on the post
 
-Our preliminary analysis showed that the data for meme posts and non-meme posts is shaped very differently, so for this project, we decided to restrict our analysis to non-meme posts. We similarly discard any posts with a particular short title or body, so that we focus our analysis on a single type of post: wordy non-meme posts.
+Our preliminary analysis showed that the data for meme posts and non-meme posts is shaped very differently, so for this project, we decided to restrict our analysis to non-meme posts.
 
 ## Measuring Popularity
 
@@ -46,7 +46,7 @@ It is of course nontrivial to decide precisely what one means by "popular." For 
 - It is well-liked
 - It generates much discussion
 
-We therefore single out the posts score, upvote ratio, and total number of comments as relevent to measuring a post's popularity. From this three variables, we would like to distill a single numerical "popularity score" for a post. In order to do this, we perform a Principal Component Analysis on these three variables across our dataset. Our "popularity score" is then defined to be the principal score, that is to say, the first principal component from our analysis. The first principal component explains 45% of the variance in our normalized outputs.
+We therefore single out the post's score, upvote ratio, and total number of comments as relevent to measuring the post's popularity. From this three variables, we would like to distill a single numerical "popularity score" for a post. In order to do this, we perform a Principal Component Analysis on these three variables across our dataset. Our "popularity score" is then defined to be the principal score, that is to say, the first principal component from our analysis. The first principal component explains 45% of the variance in our normalized outputs.
 
 
 ## Features that Influence Popularity
@@ -57,7 +57,7 @@ Number of early comments:
 The most direct thing one might expect to do is to see whether the post has quickly generated a lot of discussion. We therefore gather data on how many (top-level) comments there are on a post within an initial time period. There is of course a tradeoff here: the shorter the time period, the less nascent discussion we get to observe, but the longer the time period, the longer we have to wait to act on our results! In balancing this tradeoff, we decided that our initial time period should be ((one hour.))
 
 Title and body length:
-The coarsest observation one can make about a post is simply how long it is. It is quite sensible to expect a priori that this should affect the resulting popularity of the post. Short posts might become more popular: after all, there is a reason "too long; didn't read" (TL;DR) has become a common acronym! On the other hand, long posts might also become more popular: after all, there's more content to discuss! In any case
+The coarsest observation one can make about a post is simply how long it is. It is quite sensible to expect <i>a priori</i> that this should affect the resulting popularity of the post. Short posts might become more popular: after all, there is a reason "too long; didn't read" (TL;DR) has become a common acronym! On the other hand, long posts might also become more popular: after all, there's more content to discuss! In any case
 
 
 Sentiment analysis (ended up not used!):
