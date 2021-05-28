@@ -53,14 +53,11 @@ We therefore single out the post's score, upvote ratio, and total number of comm
 
 Our goal is to "catch on early" to the fact that a post is becoming popular. On the outset of our project, we decided to collect the following features.
 
-Number of early comments:
-The most direct thing one might expect to do is to see whether the post has quickly generated a lot of discussion. We therefore gather data on how many (top-level) comments there are on a post within an initial time period. There is of course a tradeoff here: the shorter the time period, the less nascent discussion we get to observe, but the longer the time period, the longer we have to wait to act on our results! In balancing this tradeoff, we decided that our initial time period should be ((one hour.))
+The most direct thing one might expect to do is to see whether the post has quickly generated a lot of discussion. We therefore gather data on how many (top-level) comments there are on a post within an initial time period. There is of course a tradeoff here: the shorter the time period, the less nascent discussion we get to observe, but the longer the time period, the longer we have to wait to act on our results!
 
-Title and body length:
 The coarsest observation one can make about a post is simply how long it is. It is quite sensible to expect <i>a priori</i> that this should affect the resulting popularity of the post. Short posts might become more popular: after all, there is a reason "too long; didn't read" (TL;DR) has become a common acronym! On the other hand, long posts might also become more popular: after all, there's more content to discuss! In any case
 
-
-Sentiment analysis (ended up not used!):
+Finally, we felt it would be reasonable to assess the overall sentiment of the words being posted. We therefore used VADER Sentiment Analysis to produce analytics on various sentiment variables in the titles and bodies of posts. Unfortunately, we found very little use for these variables.
 
 ## Model
 After classifying posts as "popular" (class=1) and "not popular" (class = 0), we found that ((30%)) of the posts were popular. Therefore we aimed to have a model that correctly classified posts significantly more than ((70%)) of the time. 
@@ -71,6 +68,7 @@ Next, we attempted to create a decision tree for our model using the DecisionTre
 
 (Picture of Tree)
 
+((In balancing this tradeoff, we decided that our initial time period should be ((one hour.))))
 
 ## Conclusion
 
