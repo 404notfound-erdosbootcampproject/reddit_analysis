@@ -19,12 +19,7 @@ For a subreddit, it is therefore useful to have predictors for the "popularity" 
 
 We used the Python Reddit API Wrapper (PRAW) to scrape data on posts and their comments from the subreddit r/wallstreetbets. From each comment we gather the id of the parent post, which allows us to link the comment data to the post data.
 
-(If using old data:
-We collected data on posts from several months.)
-
-(If using new data:
-We completed our initial analysis on a dataset of posts from several months on r/wallstreetbets. 
-We observed that the popularity of the subreddit as a whole waxes and wanes over time, and so in our final analysis, we focus in on posts from a single day.) 
+We completed our initial analysis on a dataset of posts from several months on r/wallstreetbets. We observed that the popularity of the subreddit as a whole waxes and wanes over time, and so in our final analysis, we focus in on posts from a single week.
 
 Anatomy of a Reddit post:
 A post on Reddit has several key features. It has a title and a body, the latter of which may include non-text content. Users may assign upvotes and downvotes to a post, indicating their preference for the post. The difference between the number of upvotes and downvotes is the post's score. Users may add comments in two ways: they may comment directly on the post ("top-level" comments), or they may add a comment in response to another comment.
@@ -46,7 +41,7 @@ It is of course nontrivial to decide precisely what one means by "popular." For 
 - It is well-liked
 - It generates much discussion
 
-We therefore single out the post's score, upvote ratio, and total number of comments as relevent to measuring the post's popularity. From this three variables, we would like to distill a single numerical "popularity score" for a post. In order to do this, we perform a Principal Component Analysis on these three variables across our dataset. Our "popularity score" is then defined to be the principal score, that is to say, the first principal component from our analysis. The first principal component explains 45% of the variance in our normalized outputs.
+We therefore single out the post's score, upvote ratio, and total number of comments as relevent to measuring the post's popularity. From this three variables, we would like to distill a single numerical "popularity score" for a post. In order to do this, we perform a Principal Component Analysis on these three variables across our dataset. Our "popularity score" is then defined to be the principal score, that is to say, the first principal component from our analysis. This principal score explains 45% of the variance in our normalized scores, upvote ratios, and comment numbers.
 
 ## Features that Influence Popularity
 
@@ -58,12 +53,15 @@ The coarsest observation one can make about a post is simply how long it is. It 
 
 Finally, we felt it would be reasonable to assess the overall sentiment of the words being posted. We therefore used VADER Sentiment Analysis to produce analytics on various sentiment variables in the titles and bodies of posts. Unfortunately, we found very little use for these variables.
 
+Since the only meaningful feature that we found to influence popularity is the number of early comments, we intend to use this feature as best we can. We gather the number of comments in the first 30, 60, 90, and 120 minutes of the post's lifetime. We treat each of these values as its own variable; using these variables together with each other acts as a measure of frequency. We tested our model with Thus our model uses 4 input variables.
+
 ## Model
-After classifying posts as "popular" (class=1) and "not popular" (class = 0), we found that ((30%)) of the posts were popular. Therefore we aimed to have a model that correctly classified posts significantly more than ((70%)) of the time. 
+
+If a post's principal score is greater than the median, we call the post "popular." Otherwise, we call it "unpopular." Therefore we aimed to have a model that correctly classified posts significantly more than 50% of the time. 
 
 We first attempted to classify the popular posts using the KNN algorithm. After testing the algorithm for up to 20 neighbors, we found that the average accuracy over 5 test-training splits never exceeded 20%. Since this accuracy was too low, we decided to abandon this method.
 
-Next, we attempted to create a decision tree for our model using the DecisionTreeClassifier subpackage from the sklearn package. Our tree correctly classified posts in our test data ((83%)) of the time. Since this method of creating trees is often highly sensitive to changing the inputs, we generated trees using 100 different train-test splits, and plotted a histogram of the accuracies. The average accuracy was ((82.2%)), suggesting that our tree was not just a lucky artifact of the inputs.
+Next, we attempted to create a decision tree for our model using the DecisionTreeClassifier subpackage from the sklearn package. Our tree correctly classified posts in our test data ~60-63% of the time. Since this method of creating trees is often highly sensitive to changing the inputs, we generated trees using 100 different train-test splits, and plotted a histogram of the accuracies. The average accuracy was ((82.2%)), suggesting that our tree was not just a lucky artifact of the inputs.
 
 (Picture of Tree)
 
@@ -76,9 +74,3 @@ We created a decision tree that uses data gathered from within the first-hour a 
 Going forward, we expect that the decision tree generated may be highly sensitive to the recent conditions of the subreddit, i.e. during the GameStop saga, the subreddit attracted many users from other parts of the site, which may have changed the demographics and voting characteristics. It may still be plausible to generate a decision tree every day, and to use this tree to classify posts from the next day. We thus hope to repeat this process over a long period of time and track our results.
 
 Thank you for reading!
-
-
------------------------------------------------------------
-## Other
-
-Whatever
