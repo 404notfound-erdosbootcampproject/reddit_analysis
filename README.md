@@ -2,10 +2,10 @@
 
 ## Authors:
 - Jason Liang
-- Berkan Yilmaz
 - Yixin Xu
+- Berkan Yilmaz
 - Cindy Zhang
-- Jinjie Zhang
+- Jingjie Zhang
 - Bradley Zykoski
 
 ## Project Overview
