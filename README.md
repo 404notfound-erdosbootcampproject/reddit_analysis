@@ -42,11 +42,15 @@ Our preliminary analysis showed that the data for meme posts and non-meme posts 
 
 ## Measuring Popularity
 
-It is of course nontrivial to decide what one precisely means by "popular." For our purposes, we say that a post is popular if:
+It is of course nontrivial to decide precisely what one means by "popular." For our purposes, we say that a post is popular if:
 - It is well-liked
 - It generates much discussion
 
 We therefore single out the posts score, upvote ratio, and total number of comments as relevent to measuring a post's popularity. From this three variables, we would like to distill a single numerical "popularity score" for a post. In order to do this, we perform a Principal Component Analysis on these three variables across our dataset. Our "popularity score" is then defined to be the principal score, that is to say, the first principal component from our analysis.
+
+## Features that Influence Popularity
+
+
 
 ## Resources we used
 - Resource 1: 
