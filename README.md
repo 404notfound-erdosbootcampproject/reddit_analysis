@@ -48,14 +48,27 @@ It is of course nontrivial to decide precisely what one means by "popular." For 
 
 We therefore single out the posts score, upvote ratio, and total number of comments as relevent to measuring a post's popularity. From this three variables, we would like to distill a single numerical "popularity score" for a post. In order to do this, we perform a Principal Component Analysis on these three variables across our dataset. Our "popularity score" is then defined to be the principal score, that is to say, the first principal component from our analysis.
 
+
 ## Features that Influence Popularity
 
 
+## Model
+After classifying posts as "popular" (class=1) and "not popular" (class = 0), we found that ((30%)) of the posts were popular. Therefore we aimed to have a model that correctly classified posts significantly more than ((70%)) of the time. 
 
-## Resources we used
-- Resource 1: 
-	- Used for blah blah blah
+We first attempted to classify the popular posts using the KNN algorithm. After testing the algorithm for up to 20 neighbors, we found that the average accuracy over 5 test-training splits never exceeded 20%. Since this accuracy was too low, we decided to abandon this method.
 
+Next, we attempted to create a decision tree for our model using the DecisionTreeClassifier subpackage from the sklearn package. Our tree correctly classified posts in our test data ((83%)) of the time. Since this method of creating trees is often highly sensitive to changing the inputs, we generated trees using 100 different train-test splits, and plotted a histogram of the accuracies. The average accuracy was ((82.2%)), suggesting that our tree was not just a lucky artifact of the inputs.
+
+(Picture of Tree)
+
+
+## Conclusion
+
+We created a decision tree that uses data gathered from within the first-hour a post is made on r/wallstreetbets to predict whether it will become popular, i.e. read the top 30% in the "top" posts of the day. Our tree correctly classified the test data ((83%)) of the time, which we view as an acceptable improvement over the baseline of ((70%)) given (i) our data was highly noisy and (ii) any such classification should be expected to be difficult (otherwise the subreddit could be easily gamed).
+
+Going forward, we expect that the decision tree generated may be highly sensitive to the recent conditions of the subreddit, i.e. during the GameStop saga, the subreddit attracted many users from other parts of the site, which may have changed the demographics and voting characteristics. It may still be plausible to generate a decision tree every day, and to use this tree to classify posts from the next day. We thus hope to repeat this process over a long period of time and track our results.
+
+Thank you for reading!
 
 
 -----------------------------------------------------------
