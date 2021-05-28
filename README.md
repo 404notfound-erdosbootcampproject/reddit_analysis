@@ -24,9 +24,7 @@ We collected data on posts from several months.)
 
 (If using new data:
 We completed our initial analysis on a dataset of posts from several months on r/WallStreetBets. 
-We observed that the popularity of the subreddit as a whole waxes and wanes over time, and so in our final analysis, we focus in on posts from a single day.)
-
-Our preliminary analysis showed that the data for meme posts and non-meme posts is shaped very differently, so for this project, we decided to restrict our analysis to non-meme posts. 
+We observed that the popularity of the subreddit as a whole waxes and wanes over time, and so in our final analysis, we focus in on posts from a single day.) 
 
 Anatomy of a Reddit post:
 A post on Reddit has several key features. It has a title and a body, the latter of which may include non-text content. Users may assign upvotes and downvotes to a post, indicating their preference for the post. The different between the number of upvotes and downvotes is the post's score. Users may add comments in two ways: they may comment directly on the post ("top-level" comments), or they may add a comment in response to another comment.
@@ -39,6 +37,12 @@ Given a particular post on r/WallStreetBets, we considered the following feature
 - The number of top-level comments on the post
 - The number of top-level comments in the first hour
 - The total number of all comments on the post
+
+Our preliminary analysis showed that the data for meme posts and non-meme posts is shaped very differently, so for this project, we decided to restrict our analysis to non-meme posts. We similarly discard any posts with a particular short title or body, so that we focus our analysis on a single type of post: wordy non-meme posts.
+
+## Measuring Popularity
+
+
 
 ## Resources we used
 - Resource 1: 
