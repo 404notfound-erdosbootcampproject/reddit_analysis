@@ -28,7 +28,17 @@ We observed that the popularity of the subreddit as a whole waxes and wanes over
 
 Our preliminary analysis showed that the data for meme posts and non-meme posts is shaped very differently, so for this project, we decided to restrict our analysis to non-meme posts. 
 
+Anatomy of a Reddit post:
+A post on Reddit has several key features. It has a title and a body, the latter of which may include non-text content. Users may assign upvotes and downvotes to a post, indicating their preference for the post. The different between the number of upvotes and downvotes is the post's score. Users may add comments in two ways: they may comment directly on the post ("top-level" comments), or they may add a comment in response to another comment.
 
+Given a particular post on r/WallStreetBets, we considered the following features:
+- The length of the title
+- The length of the body
+- The score
+- The ratio of upvotes to downvotes
+- The number of top-level comments on the post
+- The number of top-level comments in the first hour
+- The total number of all comments on the post
 
 ## Resources we used
 - Resource 1: 
