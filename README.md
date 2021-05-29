@@ -54,7 +54,7 @@ The most direct thing one might expect to do is to see whether the post has quic
 
 The coarsest observation one can make about a post is simply how long it is. It is quite sensible to expect <i>a priori</i> that this should affect the resulting popularity of the post. Short posts might become more popular: after all, there is a reason "too long; didn't read" (TL;DR) has become a common acronym! On the other hand, long posts might also become more popular: after all, there's more content to discuss! Perhaps there is some truth to both of these considerations: we did not find title length or body length to be useful variables.
 
-Finally, we felt it would be reasonable to assess the overall sentiment of the words being posted. We therefore used VADER Sentiment Analysis to produce analytics on various sentiment variables in the titles and bodies of posts. Unfortunately, we found very little use for these variables.
+Finally, we felt it would be reasonable to assess the overall sentiment of the words being posted. We therefore used VADER Sentiment Analysis to produce analytics on various sentiment variables in the titles and bodies of posts. Unfortunately, we found very little use for these variables (they had almost no correlation with the principal score).
 
 Since the only meaningful feature that we found to influence popularity is the number of early comments, we intend to use this feature as best we can. We gather the number of comments in the first 30, 60, 90, and 120 minutes of the post's lifetime. We treat each of these values as its own variable; using these variables together with each other acts as a measure of frequency. We tested our model with Thus our model uses 4 input variables.
 
