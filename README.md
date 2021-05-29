@@ -86,7 +86,7 @@ principal              1.000000
 
 ## Model
 
-If a post's principal score is greater than the median, we call the post "popular." Otherwise, we call it "unpopular." Therefore we aimed to have a model that correctly classified posts significantly more than 50% of the time. 
+If a post's principal score is greater than the median, we call the post "popular." Otherwise, we call it "unpopular." Just by random guessing, we should be able to classify posts correctly 50% of the time (since 50% of the posts are popular). Therefore we aimed to have a model that correctly classified posts significantly more than 50% of the time. 
 
 We first attempted to classify the popular posts using the KNN algorithm. After testing the algorithm for up to 20 neighbors, we found that the average accuracy over 5 test-training splits never exceeded 20%. Since this accuracy was too low, we decided to abandon this method.
 
