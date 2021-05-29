@@ -56,7 +56,7 @@ The coarsest observation one can make about a post is simply how long it is. It 
 
 Finally, we felt it would be reasonable to assess the overall sentiment of the words being posted. We therefore used VADER Sentiment Analysis to produce analytics on various sentiment variables in the titles and bodies of posts. Unfortunately, we found very little use for these variables (they had almost no correlation with the principal score).
 
-Since the only meaningful feature that we found to influence popularity is the number of early comments, we intend to use this feature as best we can. We gather the number of comments in the first 30, 60, 90, and 120 minutes of the post's lifetime. We treat each of these values as its own variable; using these variables together with each other acts as a measure of frequency. We tested our model with Thus our model uses 4 input variables.
+Since the only meaningful feature that we found to influence popularity is the number of early comments, we intended to use this feature as best we can. We gathered the number of comments in the first 30, 60, 90, and 120 minutes of the post's lifetime. We treated each of these values as its own variable; using these variables together with each other acts as a measure of frequency. We tested our model with Thus our model uses 4 input variables.
 
 The correlation of the principal score with various variables was :
 
