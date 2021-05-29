@@ -58,6 +58,20 @@ Finally, we felt it would be reasonable to assess the overall sentiment of the w
 
 Since the only meaningful feature that we found to influence popularity is the number of early comments, we intend to use this feature as best we can. We gather the number of comments in the first 30, 60, 90, and 120 minutes of the post's lifetime. We treat each of these values as its own variable; using these variables together with each other acts as a measure of frequency. We tested our model with Thus our model uses 4 input variables.
 
+The correlation of the principal score with various variables was :
+title_length           0.001149
+time_created           0.079461
+first_30_comments      0.470774
+first_hour_comments    0.527607
+first_90_comments      0.540926
+num_comments           0.552987
+first_120_comments     0.553477
+class                  0.590673
+score                  0.601900
+upvote_ratio           0.628804
+num_top_comments       0.745683
+principal              1.000000
+
 ## Model
 
 If a post's principal score is greater than the median, we call the post "popular." Otherwise, we call it "unpopular." Therefore we aimed to have a model that correctly classified posts significantly more than 50% of the time. 
