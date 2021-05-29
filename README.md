@@ -73,8 +73,10 @@ Next, we attempted to create a decision tree for our model using the DecisionTre
 
 We created a decision tree that uses data gathered from within the first-hour a post is made on r/wallstreetbets to predict whether it will become popular, i.e. read the top 30% in the "top" posts of the day. Our tree correctly classified the test data ((83%)) of the time, which we view as an acceptable improvement over the baseline of ((70%)) given (i) our data was highly noisy and (ii) any such classification should be expected to be difficult (otherwise the subreddit could be easily gamed).
 
-![60min](https://user-images.githubusercontent.com/81804685/120056377-ec2b7e00-bff8-11eb-885c-6278dd2b005b.png)
-![120min](https://user-images.githubusercontent.com/81804685/120056382-f0579b80-bff8-11eb-9f83-989e37cafce2.png)
+![60min](https://user-images.githubusercontent.com/81804685/120056426-56dcb980-bff9-11eb-8672-37ae056b0115.png)
+![120min](https://user-images.githubusercontent.com/81804685/120056424-504e4200-bff9-11eb-887f-eac15c9dd503.png)
+
+
 
 
 Going forward, we expect that the decision tree generated may be highly sensitive to the recent conditions of the subreddit, i.e. during the GameStop saga, the subreddit attracted many users from other parts of the site, which may have changed the demographics and voting characteristics. It may still be plausible to generate a decision tree every day, and to use this tree to classify posts from the next day. We thus hope to repeat this process over a long period of time and track our results.
