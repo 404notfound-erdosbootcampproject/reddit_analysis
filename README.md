@@ -63,7 +63,7 @@ We first attempted to classify the popular posts using the KNN algorithm. After 
 
 Next, we attempted to create a decision tree for our model using the DecisionTreeClassifier subpackage from the sklearn package. Our tree correctly classified posts in our test data ~60-63% of the time. Since this method of creating trees is often highly sensitive to changing the inputs, we generated trees using 100 different train-test splits, and plotted a histogram of the accuracies. The average accuracy was ((82.2%)), suggesting that our tree was not just a lucky artifact of the inputs.
 
-![ScreenShot](https://raw.github.com/404notfound-erdosbootcampproject/reddit_analysis/blob/main/tree.png)
+![tree](https://user-images.githubusercontent.com/81804685/120056209-fd27bf80-bff7-11eb-9b99-005d78b5a5f9.png)
 
 ## Conclusion
 
