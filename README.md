@@ -100,7 +100,7 @@ One drawback of the decision tree method is sensitive to changing the inputs. To
 
 If we also add the number of comments from the first 90 minutes and the first 120 minutes as inputs, the average accuracy increases to 62.8% and the median accuracy to 64.4%.
 
-![120min](https://user-images.githubusercontent.com/81804685/120057148-1af82300-bffe-11eb-894b-193eb6c60e21.png)
+![120min](https://user-images.githubusercontent.com/81804685/120057161-2b100280-bffe-11eb-8133-33bd2e61ae32.png)
 
 ## Conclusion
 
