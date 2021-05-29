@@ -13,11 +13,11 @@ Online financial forums have started to have non-trivial impacts on market activ
 - Elon Musk's tweets about cryptocurrencies and their influence on cryptocurrency prices
 - The GameStop short squeeze, which was driven by posts on the subreddit r/wallstreetbets 
 
-For a subreddit, it is therefore useful to have predictors for the "popularity" of a post. Our project defines a "popularity" metric and models this using features of a post that can be gathered within an hour of its posting.
+For a subreddit, it is therefore useful to have predictors for the "popularity" of a post. Specifically, we might be interested in classifying whether a post will cross a certain level of popularity, for example reaching the front page of the subreddit on a given day. In our project, we define a popularity threshold and create a model to classify posts by whether they cross this threshold.
 
 ## Description of the Data
 
-We used the Python Reddit API Wrapper (PRAW) to scrape data on posts and their comments from the subreddit r/wallstreetbets. From each comment we gather the id of the parent post, which allows us to link the comment data to the post data.
+We used the Python Reddit API Wrapper (PRAW) to scrape data on posts and their comments from the top posts of the week on the subreddit r/wallstreetbets. From each comment we gather the id of the parent post, which allows us to link the comment data to the post data.
 
 We completed our initial analysis on a dataset of posts from several months on r/wallstreetbets. We observed that the popularity of the subreddit as a whole waxes and wanes over time, and so in our final analysis, we focus in on posts from a single week.
 
