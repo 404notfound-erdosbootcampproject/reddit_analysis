@@ -35,6 +35,10 @@ Given a particular post on r/wallstreetbets, we considered the following feature
 
 Our preliminary analysis showed that the data for meme posts and non-meme posts is shaped very differently, so for this project, we decided to restrict our analysis to non-meme posts.
 
+![#of comments vs score](https://user-images.githubusercontent.com/81650558/120056329-7845a180-c009-11eb-8793-5a2694a3b9c1.png)
+
+
+
 ## Measuring Popularity
 
 It is of course nontrivial to decide precisely what one means by "popular." For our purposes, we say that a post is popular if:
